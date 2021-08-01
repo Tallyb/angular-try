@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export abstract class ServiceService {
 
   constructor() { }
-  lazyLoad() {
-  }
+
+  // Put here what it must return in real
+  abstract lazyLoad(): void;
 }

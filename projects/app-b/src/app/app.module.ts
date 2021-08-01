@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModuleBModule } from '@src/module-b/module-b.module'; 
-import { SharedModule } from '@src/shared/shared.module';
+import { ModuleBModule } from '@src/module-b/module-b.module';
+import { ServiceService, SharedModule } from '@src/shared';
+import { ServiceBService } from './service-b.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +16,7 @@ import { SharedModule } from '@src/shared/shared.module';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [{ provide: ServiceService, useClass: ServiceBService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
