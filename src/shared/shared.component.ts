@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { } from './shared.service'
+import { ServiceService } from './shared.service'
 
 @Component({
   selector: 'app-comp',
@@ -7,12 +7,12 @@ import { } from './shared.service'
 })
 export class SharedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly service: ServiceService) { }
 
   ngOnInit(): void {
   }
 
   onClick() {
-    // load the abstract module here
+    this.service.lazyLoad();
   }
 }

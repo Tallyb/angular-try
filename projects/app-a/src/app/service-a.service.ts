@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import { ServiceService } from '@src/shared';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceAService {
+export class ServiceAService implements ServiceService {
 
-  constructor() { 
-    
+  constructor() {
+
   }
 
   lazyLoad() {
-    import('@src/module-a/module-a.module');
+    console.log(`import('@src/module-a/module-a.module')`);
+    // import('@src/module-a/module-a.module');
   }
 }
